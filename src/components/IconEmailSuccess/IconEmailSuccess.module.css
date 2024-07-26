@@ -1,0 +1,14 @@
+.root {
+}
+
+.marketplaceStroke {
+  stroke: var(--marketplaceColor);
+}
+
+.successFill {
+  fill: var(--colorSuccess);
+}
+
+.checkStroke {
+  stroke: var(--colorWhite);
+}

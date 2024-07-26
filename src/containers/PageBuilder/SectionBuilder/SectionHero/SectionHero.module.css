@@ -1,0 +1,211 @@
+.root {
+  /* SectionContainer defaults */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+
+  /* Hero specific */
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#h1prinfilter{
+  font-size: 2em; 
+  font-weight: bold; 
+  margin-bottom: 15px;
+}
+
+#containerform{
+  margin: 10px; 
+  max-width: 420px; 
+  padding: 30px 30px 60px 30px; 
+  background-color: white; 
+  font-family: Helvetica; 
+  font-weight: 600; 
+  color: #484848;
+}
+
+
+#btnsearch{
+  float: right;
+  background-color: rgb(241, 133, 51);
+  border-color: rgb(241, 133, 51)
+}
+
+#formgroup{
+  font-size: small;
+}
+
+#formgroupsmall{
+  font-size: small;
+}
+
+#inputgroupsmall{
+  font-size: small;
+}
+
+#inputgroupprepend{
+  font-size: small;
+}
+
+/* An external style sheet can be written in any text editor. The file should not contain any html tags. The style sheet file must be saved with a .css extension. */
+
+/* Element Selector */
+.background_img{
+	background-image: url("https://a0.muscache.com/4ea/air/r:w3100-h1200-sfit,e:fjpg-c80/pictures/318dae49-6efb-484c-b4d2-b3d84c2bcd4e.jpg");
+	background-repeat: no-repeat;
+	background-size: 100vw 100vh;
+	margin-top: 10px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+/* For styling NavBar */
+.navbar.navbar-expand-lg.navbar-light li a{
+	color: white;
+	margin-bottom: 20px;
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.navbar.navbar-expand-lg.navbar-light li a:hover {
+	color: white;
+	border-bottom: 3px solid white;
+}
+
+.checked {
+    color: rgb(241, 133, 51)
+}
+
+.btn-primary.btn-lg {
+	background-color: rgb(255,90,95);
+	border-color: rgb(255,90,95);
+	font-size: 16px;
+}
+
+.container li a {
+	color: #767676;
+}
+
+.btn.btn-outline-primary.rounded.nohover {
+	pointer-events: none;
+}
+
+.btn.btn-primary.new {
+	background-color: rgb(241, 133, 51);
+	border: none;
+	font-size: 12px;
+	padding: 1px 4px;
+}
+
+
+/*Custom HTML Added*/
+
+#divtitle{
+  padding: 2px 100px; font-size: 14px; font-family: Helvetica;
+}
+
+#svgtitle{
+  height: 20px; width: 20px; fill: rgb(255, 180, 0);
+}
+
+#ptitle{
+  display:inline
+}
+
+#divcontainer1{
+  padding: 5px;
+}
+
+#divcontainer2{
+  padding: 5px;
+}
+
+#divcontainer3{
+  padding: 3px; font-size: 14px; font-family: Helvetica;
+}
+
+#divcontainer4{
+  margin-bottom: 10px;
+}
+
+#pcontainer4{
+  font-weight: bold; font-family: Helvetica; margin: 0;
+}
+
+#pcontainer4_1{
+  font-weight: bold; font-family: Helvetica; margin: 0;
+}
+
+#pcontainer4_2{
+  font-weight: bold; font-family: Helvetica; margin: 0;
+}
+
+#divcontainer5{
+  margin-bottom: 50px; color: #484848;
+}
+
+#h3container5{
+  margin-top: 50px;
+}
+
+#buttoncontainer5{
+  margin: 50px; padding: 10px; padding-left: 20px; padding-right: 20px; border: 2px solid;
+}
+
+#divcontainer6{
+  margin-top: 70px;
+}
+
+#h6container6{
+  margin-left: 40px;
+}
+
+#ulcontainer6{
+  list-style: none;
+}
+
+#imgcontainer4_1{
+  border-radius: 50%;
+}
+
+#imgcontainer4_2{
+  border-radius: 50%;
+}
+
+#imgcontainer4_3{
+  border-radius: 50%;
+}
+
+.row{
+  justify-content: center;
+}
+
+#divrow1{
+  justify-content: center;
+}
+
+#divrow2{
+  justify-content: center;
+}
+
+#divrow3{
+  justify-content: center;
+}
+
+#divrow4{
+  justify-content: center;
+}
+/*
+#container{
+  margin-top: -50px;
+}*/
+
+.tdform{
+  align-content: baseline;
+}

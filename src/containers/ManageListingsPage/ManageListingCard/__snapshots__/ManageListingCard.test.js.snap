@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ManageListingCard matches snapshot (purchase) 1`] = `
+<div
+  class="root"
+>
+  <div
+    class="clickWrapper"
+    tabindex="0"
+  >
+    <div
+      class="root"
+    >
+      <div
+        class="aspectPadding"
+        style="padding-bottom: 100%;"
+      >
+        <div
+          class="aspectBox"
+        >
+          <div
+            class="rootForImage noImageContainer"
+          >
+            <div
+              class="noImageWrapper"
+            >
+              <svg
+                class="noImageIcon"
+                height="49"
+                viewBox="0 -1 48 49"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    d="M13.6 9.6L24 .8l10.4 8.8z"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M.8 46.4h46.4V9.6H.8z"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5.6 41.6h36.8V14.4H5.6z"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M19.998 31.636l.835-.835a4.035 4.035 0 0 1 2.853-1.183h.693c1.07 0 2.097.426 2.853 1.183l.835.835"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M21.599 23.983a1.009 1.009 0 1 0 0 2.018 1.009 1.009 0 0 0 0-2.018M26.402 23.983a1.009 1.009 0 1 0 0 2.018 1.009 1.009 0 0 0 0-2.018"
+                  />
+                </g>
+              </svg>
+              <div
+                class="noImageText"
+              >
+                <span>
+                  ResponsiveImage.noImage
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="menuOverlayWrapper"
+    >
+      <div
+        class="menuOverlay"
+      />
+    </div>
+    <div
+      class="menubarWrapper"
+    >
+      <div
+        class="menubarGradient"
+      />
+      <div
+        class="menubar"
+      >
+        <div
+          class="root menu cardIsOpen"
+        >
+          <button
+            class="root menuLabel"
+          >
+            <div
+              class="iconWrapper"
+            >
+              <svg
+                class="menuIcon menuIcon"
+                height="12"
+                viewBox="0 0 26 12"
+                width="26"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <filter
+                    filterUnits="objectBoundingBox"
+                    height="450%"
+                    width="177.8%"
+                    x="-38.9%"
+                    y="-125%"
+                  >
+                    <feoffset
+                      dy="2"
+                      in="SourceAlpha"
+                      result="shadowOffsetOuter1"
+                    />
+                    <fegaussianblur
+                      in="shadowOffsetOuter1"
+                      result="shadowBlurOuter1"
+                      stdDeviation="2"
+                    />
+                    <fecolormatrix
+                      in="shadowBlurOuter1"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"
+                    />
+                  </filter>
+                </defs>
+                <g
+                  filter="url(#a)"
+                  transform="translate(-342 -18)"
+                >
+                  <path
+                    d="M348 24c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm7 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm7 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"
+                  />
+                </g>
+                <g
+                  transform="translate(-342 -18)"
+                >
+                  <path
+                    d="M348 24c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm7 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm7 0c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z"
+                  />
+                </g>
+              </svg>
+            </div>
+          </button>
+          <div
+            class="menuContent isClosed"
+            style="left: -10000px;"
+          >
+            <ul
+              class="content"
+            >
+              <li
+                class="root"
+                role="menuitem"
+              >
+                <button
+                  class="menuItem inlineTextButton"
+                >
+                  <span>
+                    ManageListingCard.closeListing
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="info"
+  >
+    <div
+      class="price"
+    >
+      <div
+        class="priceValue"
+        title="55"
+      >
+        55
+      </div>
+    </div>
+    <div
+      class="mainInfo"
+    >
+      <div
+        class="titleWrapper"
+      >
+        <button
+          class="title inlineTextButton"
+        >
+          <span
+            style="word-break: break-all;"
+          >
+            listing1
+          </span>
+           title
+        </button>
+      </div>
+    </div>
+    <div
+      class="manageLinks"
+    >
+      <a
+        class="manageLink"
+        href="/l/listing1-title/listing1/edit/details"
+      >
+        <span>
+          ManageListingCard.editListing
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;

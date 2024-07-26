@@ -1,0 +1,183 @@
+<!doctype html>
+<html data-htmlattr="htmlAttributes">
+  <head>
+    <meta charset="utf-8">
+    <!--!title-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--!meta-->
+
+    <!-- Favicons and app icons -->
+    <!-- If you want more control, you can create icons using https://realfavicongenerator.net/ and remove generated webmanifest from the server and Page -->
+    <!-- Note: we generate web app manifest from design/branding.json, and it is set in src/components/Page/Page component -->
+    <!-- Note: we don't use favicon.ico by default. However, favicon-48x48.png, favicon-32x32.png, favicon-16x16.png and apple-touch-icon come from hosted assets / Console -->
+    <!-- End Favicons -->
+
+    <!--!link-->
+    <!--!ssrStyles-->
+    <!--!ssrLinks-->
+
+    <style>
+
+     /**
+      * Inter font is back up font for non-apple environments
+      *
+      * https://rsms.me/inter/
+      * https://github.com/philipbelesky/inter-ui
+      */
+
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Thin.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Thin.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 100;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ThinItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ThinItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 200;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraLight.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraLight.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 200;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraLightItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraLightItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Light.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Light.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 300;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-LightItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-LightItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Regular.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Regular.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 400;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Italic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Italic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Medium.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Medium.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 500;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-MediumItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-MediumItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-SemiBold.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-SemiBold.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 600;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-SemiBoldItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-SemiBoldItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Bold.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Bold.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 700;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-BoldItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-BoldItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 800;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraBold.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraBold.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 800;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraBoldItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-ExtraBoldItalic.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 900;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Black.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-Black.woff") format("woff");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: italic;
+        font-weight: 900;
+        font-display: fallback;
+        src: url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-BlackItalic.woff2") format("woff2"), url("https://assets-sharetribecom.sharetribe.com/webfonts/inter/static-web/Inter-BlackItalic.woff") format("woff");
+      }
+    </style>
+
+    <!--!script-->
+
+    <link rel="stylesheet" href="%PUBLIC_URL%/static/reactDates.css" />
+  </head>
+  <body>
+    <div id="root"><!--!body--></div>
+    <div id="portal-root"></div>
+
+    <!--
+         Stripe script should be on every page, not just the pages that
+         use the API:
+
+         https://stripe.com/docs/stripe.js#including-stripejs
+       -->
+    <script src="https://js.stripe.com/v3/" crossorigin></script>
+    <!--!preloadedStateScript-->
+
+    <!--!ssrScripts-->
+
+    <!--
+         Note when adding new external scripts/styles/fonts/etc.:
+         If a Content Security Policy (CSP) is turned on, the new URLs
+         should be whitelisted in the policy.
+
+         Check: /server/csp.js
+    -->
+  </body>
+</html>

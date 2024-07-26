@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationLinks should match snapshot with both links disabled 1`] = `
+<nav
+  class="root"
+>
+  <div
+    class="prev"
+  >
+    <svg
+      class="arrowIcon disabled"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.4 1c.17 0 .34.065.458.192.214.228.182.57-.07.764L2.528 7.5l7.26 5.545c.252.194.284.535.07.763-.214.23-.592.257-.846.064l-7.8-5.958C1.077 7.81 1 7.66 1 7.5c0-.16.077-.31.212-.414l7.8-5.958C9.125 1.042 9.262 1 9.4 1"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+  <div
+    class="pageNumberList pageNumberList1Items"
+  >
+    <a
+      class="toPageLink currentPage"
+      href="/s?page=1&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      1
+    </a>
+  </div>
+  <div
+    class="next"
+  >
+    <svg
+      class="arrowIcon disabled"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.6 14c-.17 0-.34-.065-.458-.192-.214-.228-.182-.57.07-.764L8.472 7.5 1.21 1.955c-.252-.194-.284-.535-.07-.763.214-.23.592-.257.846-.064l7.8 5.958c.135.104.212.255.212.414 0 .16-.077.31-.212.414l-7.8 5.958c-.113.086-.25.128-.388.128"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+</nav>
+`;
+
+exports[`PaginationLinks should match snapshot with both links enabled 1`] = `
+<nav
+  class="root"
+>
+  <a
+    class="prev"
+    href="/s?page=1&param=foobar"
+    title="PaginationLinks.previous"
+  >
+    <svg
+      class="arrowIcon"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.4 1c.17 0 .34.065.458.192.214.228.182.57-.07.764L2.528 7.5l7.26 5.545c.252.194.284.535.07.763-.214.23-.592.257-.846.064l-7.8-5.958C1.077 7.81 1 7.66 1 7.5c0-.16.077-.31.212-.414l7.8-5.958C9.125 1.042 9.262 1 9.4 1"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </a>
+  <div
+    class="pageNumberList pageNumberList3Items"
+  >
+    <a
+      class="toPageLink"
+      href="/s?page=1&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      1
+    </a>
+    <a
+      class="toPageLink currentPage"
+      href="/s?page=2&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      2
+    </a>
+    <a
+      class="toPageLink"
+      href="/s?page=3&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      3
+    </a>
+  </div>
+  <a
+    class="next"
+    href="/s?page=3&param=foobar"
+    title="PaginationLinks.next"
+  >
+    <svg
+      class="arrowIcon"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.6 14c-.17 0-.34-.065-.458-.192-.214-.228-.182-.57.07-.764L8.472 7.5 1.21 1.955c-.252-.194-.284-.535-.07-.763.214-.23.592-.257.846-.064l7.8 5.958c.135.104.212.255.212.414 0 .16-.077.31-.212.414l-7.8 5.958c-.113.086-.25.128-.388.128"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </a>
+</nav>
+`;
+
+exports[`PaginationLinks should match snapshot with prev disabled and next enabled 1`] = `
+<nav
+  class="root"
+>
+  <div
+    class="prev"
+  >
+    <svg
+      class="arrowIcon disabled"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.4 1c.17 0 .34.065.458.192.214.228.182.57-.07.764L2.528 7.5l7.26 5.545c.252.194.284.535.07.763-.214.23-.592.257-.846.064l-7.8-5.958C1.077 7.81 1 7.66 1 7.5c0-.16.077-.31.212-.414l7.8-5.958C9.125 1.042 9.262 1 9.4 1"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+  <div
+    class="pageNumberList pageNumberList3Items"
+  >
+    <a
+      class="toPageLink currentPage"
+      href="/s?page=1&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      1
+    </a>
+    <a
+      class="toPageLink"
+      href="/s?page=2&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      2
+    </a>
+    <a
+      class="toPageLink"
+      href="/s?page=3&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      3
+    </a>
+  </div>
+  <a
+    class="next"
+    href="/s?page=2&param=foobar"
+    title="PaginationLinks.next"
+  >
+    <svg
+      class="arrowIcon"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.6 14c-.17 0-.34-.065-.458-.192-.214-.228-.182-.57.07-.764L8.472 7.5 1.21 1.955c-.252-.194-.284-.535-.07-.763.214-.23.592-.257.846-.064l7.8 5.958c.135.104.212.255.212.414 0 .16-.077.31-.212.414l-7.8 5.958c-.113.086-.25.128-.388.128"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </a>
+</nav>
+`;
+
+exports[`PaginationLinks should match snapshot with prev enabled and next disabled 1`] = `
+<nav
+  class="root"
+>
+  <a
+    class="prev"
+    href="/s?page=2&param=foobar"
+    title="PaginationLinks.previous"
+  >
+    <svg
+      class="arrowIcon"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.4 1c.17 0 .34.065.458.192.214.228.182.57-.07.764L2.528 7.5l7.26 5.545c.252.194.284.535.07.763-.214.23-.592.257-.846.064l-7.8-5.958C1.077 7.81 1 7.66 1 7.5c0-.16.077-.31.212-.414l7.8-5.958C9.125 1.042 9.262 1 9.4 1"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </a>
+  <div
+    class="pageNumberList pageNumberList3Items"
+  >
+    <a
+      class="toPageLink"
+      href="/s?page=1&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      1
+    </a>
+    <a
+      class="toPageLink"
+      href="/s?page=2&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      2
+    </a>
+    <a
+      class="toPageLink currentPage"
+      href="/s?page=3&param=foobar"
+      title="PaginationLinks.toPage"
+    >
+      3
+    </a>
+  </div>
+  <div
+    class="next"
+  >
+    <svg
+      class="arrowIcon disabled"
+      height="15"
+      viewBox="0 0 11 15"
+      width="11"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.6 14c-.17 0-.34-.065-.458-.192-.214-.228-.182-.57.07-.764L8.472 7.5 1.21 1.955c-.252-.194-.284-.535-.07-.763.214-.23.592-.257.846-.064l7.8 5.958c.135.104.212.255.212.414 0 .16-.077.31-.212.414l-7.8 5.958c-.113.086-.25.128-.388.128"
+        fill-rule="evenodd"
+      />
+    </svg>
+  </div>
+</nav>
+`;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <button
+      class="root"
+    >
+      Label
+    </button>
+    <div
+      class="root isClosed"
+      style="left: -10000px;"
+    >
+      <ul
+        class="content"
+      >
+        <li
+          class="root"
+          role="menuitem"
+        >
+          Menu item 1
+        </li>
+        <li
+          class="root"
+          role="menuitem"
+        >
+          Menu item 2
+        </li>
+      </ul>
+    </div>
+  </div>
+</DocumentFragment>
+`;
