@@ -12,8 +12,7 @@
   justify-content: center;
   align-items: center;
 }
-<<<<<<< HEAD
-=======
+
 
 #h1prinfilter{
   font-size: 2em; 
@@ -189,19 +188,19 @@
 }
 
 #divrow1{
-  justify-content: center;
+  justify-content: left;
 }
 
 #divrow2{
-  justify-content: center;
+  justify-content: left;
 }
 
 #divrow3{
-  justify-content: center;
+  justify-content: left;
 }
 
 #divrow4{
-  justify-content: center;
+  justify-content: left;
 }
 /*
 #container{
@@ -211,4 +210,3 @@
 .tdform{
   align-content: baseline;
 }
->>>>>>> 159e1bc78982f13d74720f6ea8d5761a0088da8c
