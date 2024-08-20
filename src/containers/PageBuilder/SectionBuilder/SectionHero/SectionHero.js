@@ -30,6 +30,23 @@ const SectionHero = props => {
   const hasHeaderFields = hasDataInFields([title, description, callToAction], fieldOptions);
 
   return (
+<<<<<<< HEAD
+    <SectionContainer
+      id={sectionId}
+      className={className}
+      rootClassName={classNames(rootClassName || css.root)}
+      appearance={appearance}
+      options={fieldOptions}
+    >
+      {hasHeaderFields ? (
+        <header className={defaultClasses.sectionDetails}>
+          <Field data={title} className={defaultClasses.title} options={fieldOptions} />
+          <Field data={description} className={defaultClasses.description} options={fieldOptions} />
+          <Field data={callToAction} className={defaultClasses.ctaButton} options={fieldOptions} />
+        </header>
+      ) : null}
+    </SectionContainer>
+=======
     <>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossOrigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
@@ -149,6 +166,7 @@ const SectionHero = props => {
       </tr>
     </table>    
     </>
+>>>>>>> 159e1bc78982f13d74720f6ea8d5761a0088da8c
   );
 };
 
