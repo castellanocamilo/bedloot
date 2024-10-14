@@ -108,7 +108,7 @@
 /*Custom HTML Added*/
 
 #divtitle{
-  padding: 2px 100px; font-size: 14px; font-family: Helvetica;
+  padding: 10px 100px; font-size: 14px; font-family: Helvetica;
 }
 
 #svgtitle{
@@ -209,4 +209,17 @@
 
 .tdform{
   align-content: baseline;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 5px; /* Adjust the gap between grid items as needed */
+}
+
+.gridItem {
+  background-color: #f9f9f9; /* Optional: Add background color to grid items */
+  padding: 16px; /* Optional: Add padding to grid items */
+  border: 1px solid #ddd; /* Optional: Add border to grid items */
+  border-radius: 8px; /* Optional: Add border radius to grid items */
 }

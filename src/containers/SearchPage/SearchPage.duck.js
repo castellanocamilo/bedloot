@@ -317,3 +317,4 @@ export const loadData = (params, search, config) => (dispatch, getState, sdk) =>
   );
   return dispatch(searchListingsCall);
 };
+ 
