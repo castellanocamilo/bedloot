@@ -4,9 +4,14 @@ const {
   calculateTotalFromLineItems,
   calculateShippingFee,
   hasCommissionPercentage,
+  calculatePricingSystem,
+  seasonFormat
 } = require('./lineItemHelpers');
 const { types } = require('sharetribe-flex-sdk');
 const { Money } = types;
+
+
+// const { calculatePricingSystem } = require('./PricingSystem');
 
 /**
  * Get quantity and add extra line-items that are related to delivery method
@@ -116,7 +121,17 @@ const getDateRangeQuantityAndLineItems = (orderData, code) => {
  */
 exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
   const publicData = listing.attributes.publicData;
-  const unitPrice = listing.attributes.price;
+  const { bookingStart, bookingEnd } = orderData;
+  // const unitPrice = listing.attributes.price;
+  const basePrice = listing.attributes.price;
+
+  const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData;
+
+  const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+
+  const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
+  
   const currency = unitPrice.currency;
 
   /**
