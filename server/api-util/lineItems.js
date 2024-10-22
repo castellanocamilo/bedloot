@@ -142,11 +142,9 @@ const getHourQuantityAndLineItems = orderData => {
  */
 exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
   const publicData = listing.attributes.publicData;
-   const { bookingStart, bookingEnd } = orderData;
-  // const unitPrice = listing.attributes.price;
+  const { bookingStart, bookingEnd } = orderData;
   const unitPrice = listing.attributes.price;
 
-  // console.log('publicData', publicData);  
 
   let { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; 
@@ -165,30 +163,12 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   const seasons = seasonFormat(startDateHighSeason, endDateHighSeason, porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason,  porcentageLowSeason);
   
   const season = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), seasons);
-  console.log('season', season);
-  console.log('unitPrice.amount', unitPrice.amount);
+
   let seasonFeePrice = calculatePrice(season, unitPrice.amount);
-  console.log('seasonFeePrice amount', seasonFeePrice);
       seasonFeePrice = new Money(seasonFeePrice, unitPrice.currency);
 
-      console.log('seasonFeePrice', seasonFeePrice);
-
-   
   const currency = unitPrice.currency;
 
-  /**
-   * Pricing starts with order's base price:
-   * Listing's price is related to a single unit. It needs to be multiplied by quantity
-   *
-   * Initial line-item needs therefore:
-   * - code (based on unitType)
-   * - unitPrice
-   * - quantity
-   * - includedFor
-   */
-
-  // Unit type needs to be one of the following:
-  // day, night, hour or item
   const unitType = publicData.unitType;
   const code = `line-item/${unitType}`;
 
@@ -288,10 +268,10 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
   const lineItems = [
     order,
-    ...seasonFee,
     ...extraLineItems,
     ...providerCommissionMaybe,
     ...customerCommissionMaybe,
+    ...seasonFee,
   ];
 
   return lineItems;
