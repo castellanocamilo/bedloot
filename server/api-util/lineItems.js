@@ -126,7 +126,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   // const unitPrice = listing.attributes.price;
   const basePrice = listing.attributes.price;
 
-  console.log('basePrice', basePrice);  
+  console.log('basePrice', basePrice.amount);  
 
   console.log('publicData', publicData);  
   
@@ -146,8 +146,8 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 
   const season = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
   
-  const unitPrice = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), basePrice, season);
-
+  let unitPrice = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), basePrice.amount, season);
+      unitPrice = new Money(unitPrice, basePrice.currency);
 
     console.log('unitPrice', unitPrice);  
     // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);

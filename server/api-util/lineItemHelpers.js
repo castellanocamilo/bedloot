@@ -324,7 +324,7 @@ exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
       return startD >= start && endD <= end;
   });
 
-  console.log('season inside', season);
+  //console.log('season inside', season);
 
   if (season) {
       return calculatePrice(season.percentage, basePrice);
