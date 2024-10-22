@@ -196,7 +196,6 @@ exports.calculateLineTotal = lineItem => {
  * @retuns {Money} total sum
  */
 exports.calculateTotalFromLineItems = lineItems => {
-  console.log('lineItems', lineItems);  
   const totalPrice = lineItems.reduce((sum, lineItem) => {
     const lineTotal = this.calculateLineTotal(lineItem);
     return getAmountAsDecimalJS(lineTotal).add(sum);
@@ -313,7 +312,7 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 
 };
 
-exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
+exports.calculatePricingSystem = (startDate, endDate, seasons) => {
   // Logic to determine the season based on the provided dates
     const season = seasons.find(season => {
       // Assuming startDate and endDate are in 'YYYY-MM-DD' format
@@ -324,14 +323,9 @@ exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
       return startD >= start && endD <= end;
   });
 
-  //console.log('season inside', season);
+  return season;
 
-  if (season) {
-      return calculatePrice(season.percentage, basePrice);
-  } else {
-      // Default price if no season matches
-      return basePrice;
-  }
+  
 };
 
 const formatToCurrentYear = (date) => {
@@ -346,6 +340,15 @@ exports.formatToMMDDYYYY = (date) => {
   return `${month}/${day}/${year}`;
 };
 
-const calculatePrice = (seasonPercentage, basePrice) => {
-  return basePrice * (1 + seasonPercentage / 100);
+exports.calculatePrice = (season, basePrice) => {
+/* 
+  if (season) {
+    return basePrice * (1 + season.percentage / 100);
+  } else {
+      // Default price if no season matches
+      return basePrice;
+  } */
+
+    return (season.percentage / 100) * basePrice;
+ 
 };

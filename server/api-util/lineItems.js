@@ -6,10 +6,30 @@ const {
   hasCommissionPercentage,
   calculatePricingSystem,
   seasonFormat,
-  formatToMMDDYYYY
+  formatToMMDDYYYY,
+  calculatePrice
 } = require('./lineItemHelpers');
 const { types } = require('sharetribe-flex-sdk');
 const { Money } = types;
+
+
+const percentageSeasonsByDefault = {
+  constporcentageHighSeason: 20,
+  porcentageMediumSeason: 10,
+  porcentageLowSeason: 5,
+}
+
+
+const dateSeasonByDefualt = {
+  startDateHighSeason: '01/01',
+  endDateHighSeason: '03/31',
+  startDateMediumSeason: '04/01',
+  EndDateMediumSeason: '06/30',
+  startDateLowSeason: '07/01',
+  endDateLowSeason: '12/31',
+
+}
+
 
 
 // const { calculatePricingSystem } = require('./PricingSystem');
@@ -124,32 +144,32 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   const publicData = listing.attributes.publicData;
    const { bookingStart, bookingEnd } = orderData;
   // const unitPrice = listing.attributes.price;
-  const basePrice = listing.attributes.price;
-
-  console.log('basePrice', basePrice.amount);  
+  const unitPrice = listing.attributes.price;
 
   console.log('publicData', publicData);  
+
+  let { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; 
+
+    startDateHighSeason = startDateHighSeason || dateSeasonByDefualt.startDateHighSeason;
+    endDateHighSeason = endDateHighSeason ||  dateSeasonByDefualt.endDateHighSeason;
+    startDateMediumSeason = startDateMediumSeason || dateSeasonByDefualt.startDateMediumSeason;
+    EndDateMediumSeason = EndDateMediumSeason || dateSeasonByDefualt.EndDateMediumSeason;
+    startDateLowSeason = startDateLowSeason ||  dateSeasonByDefualt.startDateLowSeason;
+    endDateLowSeason = endDateLowSeason  || dateSeasonByDefualt.endDateLowSeason;
+    porcentageHighSeason = percentageSeasonsByDefault.porcentageHighSeason;
+    porcentageMediumSeason = percentageSeasonsByDefault.porcentageMediumSeason;
+    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason;
+
+
+  const seasons = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
   
-/*    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
-    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; */
+  const season = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), seasons);
+  let seasonFeePrice = calculatePrice(season, unitPrice.amount);
+      seasonFeePrice = new Money(unitPrice, basePrice.currency);
 
-    const startDateHighSeason = '01/01';
-    const endDateHighSeason = '03/31';
-    const startDateMediumSeason = '04/01';
-    const EndDateMediumSeason = '06/30';
-    const startDateLowSeason = '07/01';
-    const endDateLowSeason = '12/31';
-    const porcentageHighSeason = 20;
-    const porcentageMediumSeason = 10;
-    const porcentageLowSeason = 5;
+      console.log('seasonFeePrice', seasonFeePrice);
 
-
-  const season = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
-  
-  let unitPrice = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), basePrice.amount, season);
-      unitPrice = new Money(unitPrice, basePrice.currency);
-
-    console.log('unitPrice', unitPrice);  
     // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
@@ -217,6 +237,17 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     return -1 * percentage;
   };
 
+  const seasonFee = cleaningFeePrice
+  ? [
+      {
+        code: 'line-item/season-fee',
+        unitPrice: seasonFeePrice,
+        quantity: 1,
+        includeFor: ['customer', 'provider'],
+      },
+    ]
+  : [];
+
   // Note: extraLineItems for product selling (aka shipping fee)
   // is not included in either customer or provider commission calculation.
 
@@ -227,12 +258,14 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     ? [
         {
           code: 'line-item/provider-commission',
-          unitPrice: calculateTotalFromLineItems([order]),
+          unitPrice: calculateTotalFromLineItems([order, ...seasonFee]),
           percentage: getNegation(providerCommission.percentage),
           includeFor: ['provider'],
         },
       ]
     : [];
+
+   
 
   // The customer commission is what the customer pays for the transaction, and
   // it is added on top of the order price to get the customer's payin price:
@@ -248,10 +281,14 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
       ]
     : [];
 
+
+    
+
   // Let's keep the base price (order) as first line item and provider and customer commissions as last.
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
   const lineItems = [
     order,
+    ...seasonFee,
     ...extraLineItems,
     ...providerCommissionMaybe,
     ...customerCommissionMaybe,
