@@ -222,7 +222,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   const seasonFee = [
     {
       code: 'line-item/season-fee',
-      unitPrice: seasonFeePrice,
+      unitPrice: seasonFeePrice * quantity,
       quantity: 1,
       includeFor: ['customer', 'provider'],
     },

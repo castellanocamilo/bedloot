@@ -287,7 +287,6 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
     { seasonName: 'Medium', startDate: formatToCurrentYear(startDateMedium), endDate: formatToCurrentYear(endDateHighMedium), percentage: percenteMedium },
     { seasonName: 'Low', startDate: formatToCurrentYear(startDateLower), endDate: formatToCurrentYear(endDateLower), percentage: percenteLower }
 ]
-
 };
 
 exports.calculatePricingSystem = (startDate, endDate, seasons) => {
@@ -319,14 +318,5 @@ exports.formatToMMDDYYYY = (date) => {
 };
 
 exports.calculatePrice = (season, basePrice) => {
-/* 
-  if (season) {
-    return basePrice * (1 + season.percentage / 100);
-  } else {
-      // Default price if no season matches
-      return basePrice;
-  } */
-
     return (season.percentage / 100) * basePrice;
- 
 };
