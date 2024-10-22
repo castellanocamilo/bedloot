@@ -280,8 +280,7 @@ exports.hasCommissionPercentage = commission => {
   return isDefined && isMoreThanZero;
 };
 
-
-/* exports.calculatePricingSystem = (startDate, endDate , basePrice, season) => {
+ exports.calculatePricingSystem = (startDate, endDate , basePrice, season) => {
     // Logic to determine the season based on the provided dates
       season = seasons.find(season => {
         // Assuming startDate and endDate are in 'YYYY-MM-DD' format
@@ -320,4 +319,4 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 const formatToCurrentYear = (date) => {
   return `${date}/${currentYear}`;
 };
- */
+
