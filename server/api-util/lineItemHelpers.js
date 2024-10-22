@@ -280,28 +280,26 @@ exports.hasCommissionPercentage = commission => {
   return isDefined && isMoreThanZero;
 };
 
- exports.calculatePricingSystem = (startDate, endDate , basePrice, season) => {
-    // Logic to determine the season based on the provided dates
-      season = seasons.find(season => {
-        // Assuming startDate and endDate are in 'YYYY-MM-DD' format
-        const start = new Date(season.startDate);
-        const end = new Date(season.endDate);
-        const startD = new Date(startDate);
-        const endD = new Date(endDate);
-        return startD >= start && endD <= end;
-    });
+exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
+  // Logic to determine the season based on the provided dates
 
-    if (season) {
-        return calculatePrice(season.percentage);
-    } else {
-        // Default price if no season matches
-        return basePrice;
-    }
-};
+ 
+    const season = seasons.find(season => {
+      // Assuming startDate and endDate are in 'YYYY-MM-DD' format
+      const start = new Date(season.startDate);
+      const end = new Date(season.endDate);
+      const startD = new Date(startDate);
+      const endD = new Date(endDate);
+      return startD >= start && endD <= end;
+  });
 
 
-const calculatePrice = (seasonPercentage) => {
-  return basePrice * (1 + seasonPercentage / 100);
+  if (season) {
+      return calculatePrice(season.percentage, basePrice);
+  } else {
+      // Default price if no season matches
+      return basePrice;
+  }
 };
 
 
@@ -315,9 +313,41 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 
 };
 
+exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
+  // Logic to determine the season based on the provided dates
+
+ 
+    const season = seasons.find(season => {
+      // Assuming startDate and endDate are in 'YYYY-MM-DD' format
+      const start = new Date(season.startDate);
+      const end = new Date(season.endDate);
+      const startD = new Date(startDate);
+      const endD = new Date(endDate);
+      return startD >= start && endD <= end;
+  });
+
+  console.log('season inside', season);
+
+  if (season) {
+      return calculatePrice(season.percentage, basePrice);
+  } else {
+      // Default price if no season matches
+      return basePrice;
+  }
+};
 
 const formatToCurrentYear = (date) => {
   const currentYear = new Date().getFullYear();
   return `${date}/${currentYear}`;
 };
 
+exports.formatToMMDDYYYY = (date) => {
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+  const day = String(date.getDate()).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+};
+
+const calculatePrice = (seasonPercentage, basePrice) => {
+  return basePrice * (1 + seasonPercentage / 100);
+};

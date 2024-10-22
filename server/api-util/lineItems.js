@@ -5,7 +5,8 @@ const {
   calculateShippingFee,
   hasCommissionPercentage,
   calculatePricingSystem,
-  seasonFormat
+  seasonFormat,
+  formatToMMDDYYYY
 } = require('./lineItemHelpers');
 const { types } = require('sharetribe-flex-sdk');
 const { Money } = types;
@@ -83,7 +84,7 @@ const getHourQuantityAndLineItems = orderData => {
  * @param {*} orderData should contain bookingDates
  * @param {*} code should be either 'line-item/day' or 'line-item/night'
  */
-const getDateRangeQuantityAndLineItems = (orderData, code) => {
+ const getDateRangeQuantityAndLineItems = (orderData, code) => {
   // bookingStart & bookingend are used with day-based bookings (how many days / nights)
   const { bookingStart, bookingEnd } = orderData || {};
   const quantity =
@@ -121,12 +122,9 @@ const getDateRangeQuantityAndLineItems = (orderData, code) => {
  */
 exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
   const publicData = listing.attributes.publicData;
-   //const { bookingStart, bookingEnd } = orderData;
-/*    console.log('bookingStart', bookingStart);
-   console.log('bookingStart', bookingStart);
-   console.log('publicData', publicData); */
-  const unitPrice = listing.attributes.price;
- //  const basePrice = listing.attributes.price;
+   const { bookingStart, bookingEnd } = orderData;
+  // const unitPrice = listing.attributes.price;
+  const basePrice = listing.attributes.price;
 
 /*    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; */
@@ -142,10 +140,12 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     const porcentageLowSeason = 5;
 
 
-    const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+  const season = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+  
+  const unitPrice = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), basePrice, season);
 
-      console.log('season', season);
-    // log.debug('season', season);  
+
+    console.log('season', season);  
     // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
@@ -204,8 +204,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     code,
     unitPrice,
     quantity,
-    includeFor: ['customer', 'provider'],
-    season
+    includeFor: ['customer', 'provider']
   };
 
   // Provider commission reduces the amount of money that is paid out to provider.
