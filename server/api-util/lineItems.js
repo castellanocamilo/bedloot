@@ -145,7 +145,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   const unitPrice = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), basePrice, season);
 
 
-    console.log('season', season);  
+    console.log('unitPrice', unitPrice);  
     // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
