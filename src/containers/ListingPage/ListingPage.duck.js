@@ -359,12 +359,12 @@ const fetchMonthlyTimeSlots = (dispatch, listing) => {
 };
 
 export const fetchTransactionLineItems = ({ orderData, listingId, isOwnListing }) => dispatch => {
-  console.log('orderData', orderData);
+  //console.log('orderData', orderData);
   dispatch(fetchLineItemsRequest());
   transactionLineItems({ orderData, listingId, isOwnListing })
     .then(response => {
       const lineItems = response.data;
-      
+
       dispatch(fetchLineItemsSuccess(lineItems));
     })
     .catch(e => {
