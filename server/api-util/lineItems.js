@@ -248,6 +248,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
   const lineItems = [
     order,
+    season,
     ...extraLineItems,
     ...providerCommissionMaybe,
     ...customerCommissionMaybe,
