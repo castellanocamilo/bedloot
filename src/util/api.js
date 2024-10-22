@@ -5,7 +5,7 @@
 import appSettings from '../config/settings';
 import { types as sdkTypes, transit } from './sdkLoader';
 import Decimal from 'decimal.js';
-import { seasonFormat } from '.../server/api-util/lineItemHelpers';	
+// import { seasonFormat } from '.../server/api-util/lineItemHelpers';	
 export const apiBaseUrl = marketplaceRootURL => {
   const port = process.env.REACT_APP_DEV_API_SERVER_PORT;
   const useDevApiServer = process.env.NODE_ENV === 'development' && !!port;
@@ -106,7 +106,7 @@ const post = (path, body, options = {}) => {
 // be sent in the body.
 export const transactionLineItems = body => {
   console.log('body', body);
-  const startDateHighSeason = '01/01';
+ /*  const startDateHighSeason = '01/01';
   const endDateHighSeason = '03/31';
   const startDateMediumSeason = '04/01';
   const EndDateMediumSeason = '06/30';
@@ -116,7 +116,7 @@ export const transactionLineItems = body => {
   const porcentageMediumSeason = 10;
   const porcentageLowSeason = 5;
   const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
-  console.log('season', season);
+  console.log('season', season); */
   return post('/api/transaction-line-items', body);
 };
 
