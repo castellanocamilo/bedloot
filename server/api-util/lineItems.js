@@ -121,17 +121,17 @@ const getDateRangeQuantityAndLineItems = (orderData, code) => {
  */
 exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
   const publicData = listing.attributes.publicData;
-  const { bookingStart, bookingEnd } = orderData;
-  // const unitPrice = listing.attributes.price;
-  const basePrice = listing.attributes.price;
+  // const { bookingStart, bookingEnd } = orderData;
+  const unitPrice = listing.attributes.price;
+ //  const basePrice = listing.attributes.price;
 
-  const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+/*   const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData;
 
   const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
 
   const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
-  
+   */
   const currency = unitPrice.currency;
 
   /**
