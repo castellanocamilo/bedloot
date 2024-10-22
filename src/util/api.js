@@ -105,6 +105,7 @@ const post = (path, body, options = {}) => {
 // See `server/api/transaction-line-items.js` to see what data should
 // be sent in the body.
 export const transactionLineItems = body => {
+  console.log('body', body);
   return post('/api/transaction-line-items', body);
 };
 
