@@ -125,16 +125,26 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 /*    console.log('bookingStart', bookingStart);
    console.log('bookingStart', bookingStart);
    console.log('publicData', publicData); */
-  const unitPrice = listing.attributes.price;
+  // const unitPrice = listing.attributes.price;
  //  const basePrice = listing.attributes.price;
 
 /*    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; */
 
+    const startDateHighSeason = '01/01';
+    const endDateHighSeason = '03/31';
+    const startDateMediumSeason = '04/01';
+    const EndDateMediumSeason = '06/30';
+    const startDateLowSeason = '07/01';
+    const endDateLowSeason = '12/31';
+    const porcentageHighSeason = 20;
+    const porcentageMediumSeason = 10;
+    const porcentageLowSeason = 5;
 
-  // const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
 
-   // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
+    const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+
+    // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
 
