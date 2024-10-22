@@ -15,9 +15,8 @@ module.exports = (req, res) => {
       const listing = showListingResponse.data.data;
       const commissionAsset = fetchAssetsResponse.data.data[0];
 
-      const { providerCommission, customerCommission } =
-        commissionAsset?.type === 'jsonAsset' ? commissionAsset.attributes.data : {};
-       
+      const { providerCommission, customerCommission } = commissionAsset?.type === 'jsonAsset' ? commissionAsset.attributes.data : {};
+      console.log('TRANSACTION LINE ITEMS');
       const lineItems = transactionLineItems(
         listing,
         orderData,
