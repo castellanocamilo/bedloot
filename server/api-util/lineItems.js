@@ -144,6 +144,8 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 
     const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
 
+
+    log.debug('season', season);  
     // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
