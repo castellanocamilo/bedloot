@@ -159,7 +159,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     endDateLowSeason = endDateLowSeason  || dateSeasonByDefualt.endDateLowSeason;
     porcentageHighSeason = percentageSeasonsByDefault.porcentageHighSeason;
     porcentageMediumSeason = percentageSeasonsByDefault.porcentageMediumSeason;
-    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason;
+    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason || 5;
 
 
   const seasons = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
