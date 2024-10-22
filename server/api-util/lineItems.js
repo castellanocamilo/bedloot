@@ -130,10 +130,11 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 
    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData;
+    
 
-  const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+  // const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
 
-  const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
+   // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
 
