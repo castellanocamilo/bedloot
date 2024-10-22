@@ -317,6 +317,7 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 
 
 const formatToCurrentYear = (date) => {
+  const currentYear = new Date().getFullYear();
   return `${date}/${currentYear}`;
 };
 
