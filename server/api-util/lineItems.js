@@ -159,10 +159,10 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     endDateLowSeason = endDateLowSeason  || dateSeasonByDefualt.endDateLowSeason;
     porcentageHighSeason = percentageSeasonsByDefault.porcentageHighSeason;
     porcentageMediumSeason = percentageSeasonsByDefault.porcentageMediumSeason;
-    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason || 5;
+    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason
 
 
-  const seasons = seasonFormat(startDateHighSeason, endDateHighSeason,porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
+  const seasons = seasonFormat(startDateHighSeason, endDateHighSeason, porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason,  porcentageLowSeason);
   
   const season = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), seasons);
   console.log('season', season);
