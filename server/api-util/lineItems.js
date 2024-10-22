@@ -128,9 +128,9 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   //const unitPrice = listing.attributes.price;
  //  const basePrice = listing.attributes.price;
 
-   const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
-    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData;
-    
+/*    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; */
+
 
   // const season = seasonFormat(startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason);
 
