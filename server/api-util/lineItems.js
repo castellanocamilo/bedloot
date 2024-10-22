@@ -166,7 +166,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   
   const season = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), seasons);
   let seasonFeePrice = calculatePrice(season, unitPrice.amount);
-      seasonFeePrice = new Money(unitPrice, basePrice.currency);
+      seasonFeePrice = new Money(unitPrice, unitPrice.currency);
 
       console.log('seasonFeePrice', seasonFeePrice);
 
