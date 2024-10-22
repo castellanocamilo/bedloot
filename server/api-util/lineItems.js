@@ -121,7 +121,10 @@ const getDateRangeQuantityAndLineItems = (orderData, code) => {
  */
 exports.transactionLineItems = (listing, orderData, providerCommission, customerCommission) => {
   const publicData = listing.attributes.publicData;
-  // const { bookingStart, bookingEnd } = orderData;
+   const { bookingStart, bookingEnd } = orderData;
+   console.log('bookingStart', bookingStart);
+   console.log('bookingStart', bookingStart);
+   console.log('publicData', publicData);
   const unitPrice = listing.attributes.price;
  //  const basePrice = listing.attributes.price;
 
