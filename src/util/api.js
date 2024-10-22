@@ -110,7 +110,7 @@ export const transactionLineItems = body => {
   const bookingStart = formatToMMDDYYYY(orderData.bookingStart);
   const bookingEnd = formatToMMDDYYYY(orderData.bookingEnd);
   // console.log('bookingEnd', bookingEnd);
-
+  
   const startDateHighSeason = '01/01';
     const endDateHighSeason = '03/31';
     const startDateMediumSeason = '04/01';

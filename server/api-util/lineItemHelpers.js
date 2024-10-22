@@ -196,6 +196,7 @@ exports.calculateLineTotal = lineItem => {
  * @retuns {Money} total sum
  */
 exports.calculateTotalFromLineItems = lineItems => {
+  log.debug('lineItems', lineItems);  
   const totalPrice = lineItems.reduce((sum, lineItem) => {
     const lineTotal = this.calculateLineTotal(lineItem);
     return getAmountAsDecimalJS(lineTotal).add(sum);
@@ -304,7 +305,6 @@ exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
 
 
 exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedium, endDateHighMedium, percenteMedium, startDateLower, endDateLower, percenteLower) => {
-
   return [
     { seasonName: 'High', startDate: formatToCurrentYear(startDateHigh), endDate: formatToCurrentYear(endDateHigh), percentage: percenteHigh },
     { seasonName: 'Medium', startDate: formatToCurrentYear(startDateMedium), endDate: formatToCurrentYear(endDateHighMedium), percentage: percenteMedium },
@@ -315,8 +315,6 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 
 exports.calculatePricingSystem = (startDate, endDate , basePrice, seasons) => {
   // Logic to determine the season based on the provided dates
-
- 
     const season = seasons.find(season => {
       // Assuming startDate and endDate are in 'YYYY-MM-DD' format
       const start = new Date(season.startDate);

@@ -125,7 +125,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
    const { bookingStart, bookingEnd } = orderData;
   // const unitPrice = listing.attributes.price;
   const basePrice = listing.attributes.price;
-
+  
 /*    const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; */
 
