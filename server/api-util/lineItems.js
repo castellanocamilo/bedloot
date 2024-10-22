@@ -166,11 +166,10 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   
   const season = calculatePricingSystem(formatToMMDDYYYY(bookingStart), formatToMMDDYYYY(bookingEnd), seasons);
   let seasonFeePrice = calculatePrice(season, unitPrice.amount);
-      seasonFeePrice = new Money(unitPrice, unitPrice.currency);
+      seasonFeePrice = new Money(seasonFeePrice, unitPrice.currency);
 
       console.log('seasonFeePrice', seasonFeePrice);
 
-    // const unitPrice = calculatePricingSystem(bookingStart, bookingEnd, basePrice, season);
    
   const currency = unitPrice.currency;
 
@@ -237,16 +236,14 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     return -1 * percentage;
   };
 
-  const seasonFee = cleaningFeePrice
-  ? [
-      {
-        code: 'line-item/season-fee',
-        unitPrice: seasonFeePrice,
-        quantity: 1,
-        includeFor: ['customer', 'provider'],
-      },
-    ]
-  : [];
+  const seasonFee = [
+    {
+      code: 'line-item/season-fee',
+      unitPrice: seasonFeePrice,
+      quantity: 1,
+      includeFor: ['customer', 'provider'],
+    },
+  ];
 
   // Note: extraLineItems for product selling (aka shipping fee)
   // is not included in either customer or provider commission calculation.
