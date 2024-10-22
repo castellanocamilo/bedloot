@@ -205,6 +205,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     unitPrice,
     quantity,
     includeFor: ['customer', 'provider'],
+    season
   };
 
   // Provider commission reduces the amount of money that is paid out to provider.
@@ -248,7 +249,6 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   // Note: the order matters only if OrderBreakdown component doesn't recognize line-item.
   const lineItems = [
     order,
-    season,
     ...extraLineItems,
     ...providerCommissionMaybe,
     ...customerCommissionMaybe,
