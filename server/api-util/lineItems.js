@@ -223,7 +223,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     {
       code: 'line-item/season-fee',
       unitPrice: seasonFeePrice,
-      quantity: 1,
+      quantity: quantity,
       includeFor: ['customer', 'provider'],
     },
   ];
