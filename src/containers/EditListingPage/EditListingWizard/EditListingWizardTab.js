@@ -20,10 +20,13 @@ import EditListingPhotosPanel from './EditListingPhotosPanel/EditListingPhotosPa
 import EditListingPricingPanel from './EditListingPricingPanel/EditListingPricingPanel';
 import EditListingPricingAndStockPanel from './EditListingPricingAndStockPanel/EditListingPricingAndStockPanel';
 
+import EditListingSeasonFeePanel from './EditListingSeasonFeePanel/EditListingSeasonFeePanel';
+
 import css from './EditListingWizardTab.module.css';
 
 export const DETAILS = 'details';
 export const PRICING = 'pricing';
+export const SEASON_FEE = 'season-fee';
 export const PRICING_AND_STOCK = 'pricing-and-stock';
 export const DELIVERY = 'delivery';
 export const LOCATION = 'location';
@@ -34,6 +37,7 @@ export const PHOTOS = 'photos';
 export const SUPPORTED_TABS = [
   DETAILS,
   PRICING,
+  SEASON_FEE,
   PRICING_AND_STOCK,
   DELIVERY,
   LOCATION,
@@ -175,7 +179,7 @@ const EditListingWizardTab = props => {
         return onCompleteEditListingWizardTab(tab, values);
       },
     };
-  };
+  }; 
 
   // TODO: add missing cases for supported tabs
   switch (tab) {
@@ -203,6 +207,13 @@ const EditListingWizardTab = props => {
           {...panelProps(PRICING)}
           marketplaceCurrency={config.currency}
           listingMinimumPriceSubUnits={config.listingMinimumPriceSubUnits}
+        />
+      );
+    }
+    case SEASON_FEE: {
+      return (
+        <EditListingSeasonFeePanel
+          {...panelProps(SEASON_FEE)}
         />
       );
     }

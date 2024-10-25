@@ -59,6 +59,7 @@ import EditListingWizardTab, {
   LOCATION,
   AVAILABILITY,
   PHOTOS,
+  SEASON_FEE,
 } from './EditListingWizardTab';
 import css from './EditListingWizard.module.css';
 
@@ -70,7 +71,7 @@ import css from './EditListingWizard.module.css';
 //         Details tab asks for "title" and is therefore the first tab in the wizard flow.
 const TABS_DETAILS_ONLY = [DETAILS];
 const TABS_PRODUCT = [DETAILS, PRICING_AND_STOCK, DELIVERY, PHOTOS];
-const TABS_BOOKING = [DETAILS, LOCATION, PRICING, AVAILABILITY, PHOTOS];
+const TABS_BOOKING = [DETAILS, LOCATION, PRICING, SEASON_FEE, AVAILABILITY, PHOTOS];
 const TABS_INQUIRY = [DETAILS, LOCATION, PRICING, PHOTOS];
 const TABS_ALL = [...TABS_PRODUCT, ...TABS_BOOKING, ...TABS_INQUIRY];
 
@@ -125,6 +126,9 @@ const tabLabelAndSubmit = (intl, tab, isNewListingFlow, isPriceDisabled, process
   } else if (tab === PRICING) {
     labelKey = 'EditListingWizard.tabLabelPricing';
     submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.savePricing`;
+  } else if (tab === SEASON_FEE) {
+    labelKey = 'EditListingWizard.tabLabelSeasonFee';
+    submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.saveSeasonFee`;
   } else if (tab === PRICING_AND_STOCK) {
     labelKey = 'EditListingWizard.tabLabelPricingAndStock';
     submitButtonKey = `EditListingWizard.${processNameString}${newOrEdit}.savePricingAndStock`;
@@ -236,8 +240,10 @@ const tabCompleted = (tab, listing, config) => {
       );
     case PRICING:
       return !!price;
-    case PRICING_AND_STOCK:
+    case SEASON_FEE:
       return !!price;
+    case PRICING_AND_STOCK:
+      return !!price; /// need to add season fee attributes
     case DELIVERY:
       return !!deliveryOptionPicked;
     case LOCATION:

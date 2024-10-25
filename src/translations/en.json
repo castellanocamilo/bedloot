@@ -284,6 +284,27 @@
   "EditListingPricingPanel.createListingTitle": "Pricing",
   "EditListingPricingPanel.listingPriceCurrencyInvalid": "The listing currency is different from the marketplace currency ({marketplaceCurrency}). You cannot edit the price.",
   "EditListingPricingPanel.title": "Edit the pricing of {listingTitle}",
+
+  "EditListingSeasonFeePanel.title": "Seasonal Fee",
+  "EditListingSeasonFeePanel.createListingTitle": "Seasonal Fee",
+  "EditListingSeasonFeePanel.updateFailed": "Failed to update Seasonal pricing. Please try again.",
+  "EditListingWizard.tabLabelSeasonFee": "Seasonal Fee Pricing",
+  "EditListingWizard.default-booking.new.saveSeasonFee": "Next",
+  "EditListingSeasonFeeForm.startDateHighSeason": "High season start date",
+  "EditListingSeasonFeeForm.endDateHighSeason": "High season end date",
+  "EditListingSeasonFeeForm.porcentageHighSeason": "High season percentage",	
+  "EditListingSeasonFeeForm.startDateMediumSeason": "Medium season start date",
+  "EditListingSeasonFeeForm.endDateMediumSeason": "Medium season end date",
+  "EditListingSeasonFeeForm.porcentageMediumSeason": "Medium season percentage",	
+  "EditListingSeasonFeeForm.startDateLowSeason": "Low season start date",
+  "EditListingSeasonFeeForm.endDateLowSeason": "Low season end date",
+  "EditListingSeasonFeeForm.porcentageLowSeason": "Low season percentage",
+  "EditListingSeasonFeeForm.placeholderStartDate": "Choose a start date inside the current year",
+  "EditListingSeasonFeeForm.placeholderEndDate": "Choose a end date inside the current year",
+  "EditListingSeasonFeeForm.placeholderPorcentage": "Choose a porcentage for the season",
+
+
+
   "EditListingWizard.default-booking.new.saveAvailability": "Next",
   "EditListingWizard.default-booking.new.saveDetails": "Next",
   "EditListingWizard.default-booking.new.saveLocation": "Next",
@@ -340,6 +361,11 @@
   "FieldDateRangeInput.invalidStartDate": "The start date is not valid",
   "FieldDateRangeInput.screenReaderInputMessage": "Date input",
   "FieldDateRangeInput.startDatePlaceholderText": "Add start date",
+
+  "FieldDateInput.startDatePlaceholderText": "Add start date",
+  "FieldDateInput.endDatePlaceholderText": "Add end date",
+
+
   "FieldReviewRating.star1": "Bad experience - 1 star",
   "FieldReviewRating.star2": "Not so nice - 2 stars",
   "FieldReviewRating.star3": "OK - 3 stars",

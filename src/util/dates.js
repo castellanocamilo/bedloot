@@ -1,4 +1,5 @@
 import moment from 'moment-timezone/builds/moment-timezone-with-data-10-year-range.min';
+import { isInclusivelyBeforeDay } from 'react-dates';
 
 /**
  * Input names for the DateRangePicker from react-dates.
@@ -894,3 +895,14 @@ export const getStartOfWeek = (date, timeZone, firstDayOfWeek) => {
  */
 export const getMomentFromDate = (date, timeZone) =>
   timeZone ? moment(date).tz(timeZone) : moment(date);
+
+
+
+/**
+ * Determines a custom isOutsideRange function for FieldDateInput
+ * that shows past dates
+ */
+export const futureIsOutsideRange = day => {
+  return !isInclusivelyBeforeDay(day, moment());
+}
+

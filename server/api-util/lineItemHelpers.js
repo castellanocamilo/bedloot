@@ -290,19 +290,14 @@ exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedi
 };
 
 exports.calculatePricingSystem = (startDate, endDate, seasons) => {
-  // Logic to determine the season based on the provided dates
     const season = seasons.find(season => {
-      // Assuming startDate and endDate are in 'YYYY-MM-DD' format
       const start = new Date(season.startDate);
       const end = new Date(season.endDate);
       const startD = new Date(startDate);
       const endD = new Date(endDate);
       return startD >= start && endD <= end;
   });
-
   return season;
-
-  
 };
 
 const formatToCurrentYear = (date) => {

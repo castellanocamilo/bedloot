@@ -68,6 +68,179 @@ export const listingFields = [
   //     "label": "Gears"
   //   }
   // }
+  {
+    key: 'startDateHighSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Start Date High Season',
+      placeholderMessage: 'Choose a date for the start of the high season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Start Date High Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Start Date High Season',
+    },
+  },
+  {
+    key: 'endDateHighSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'End Date High Season',
+      placeholderMessage: 'Choose a date for the end of the high season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'End Date High Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'End Date High Season',
+    },
+  },
+  {
+    key: 'porcentageHighSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Porcentage High Season',
+      placeholderMessage: 'Choose a porcentage for the season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Porcentage High Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Porcentage High Season',
+    },
+  },
+
+  {
+    key: 'startDateMediumSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Start Date Medium Season',
+      placeholderMessage: 'Choose a date for the start of the medium season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Start Date Medium Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Start Date Medium Season',
+    },
+  },
+  {
+    key: 'endDateMediumSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'End Date Medium Season',
+      placeholderMessage: 'Choose a date for the end of the Medium season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'End Date Medium Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'End Date Medium Season',
+    },
+  },
+  {
+    key: 'porcentageMediumSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Porcentage Medium Season',
+      placeholderMessage: 'Choose a porcentage for the season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'End Date Medium Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'End Date Medium Season',
+    },
+  },
+  {
+    key: 'startDateLowSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Start Date Low Season',
+      placeholderMessage: 'Choose a date for the start of the low season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'Start Date Low Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'Start Date Low Season',
+    },
+  },
+  {
+    key: 'endDateLowSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'End Date Low Season',
+      placeholderMessage: 'Choose a date for the end of the Low season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'End Date Low Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'End Date Low Season',
+    },
+  },
+  {
+    key: 'porcentageLowSeason',
+    scope: 'public',
+    schemaType: 'text',
+    saveConfig: {
+      label: 'Porcentage Low Season',
+      placeholderMessage: 'Choose a porcentage for the season',
+      isRequired: false,
+    },
+    filterConfig: {
+      indexForSearch: true,
+      label: 'End Date Low Season',
+      searchMode: 'has_any',
+      group: 'secondary',
+    },
+    showConfig: {
+      label: 'End Date Low Season',
+    },
+  },
+
   // {
   //   key: 'bikeType',
   //   scope: 'public',
