@@ -57,7 +57,7 @@ export const EditListingSeasonFeeFormComponent = props => (
           <FieldDateInput
             className={css.input}
             id="startDateHighSeason"
-            name="Start Date High Season"
+            name="startDateHighSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.startDateHighSeason',
             })}
@@ -68,7 +68,7 @@ export const EditListingSeasonFeeFormComponent = props => (
           <FieldDateInput
             className={css.input}
             id="endDateHighSeason"
-            name="End Date High Season"
+            name="endDateHighSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.endDateHighSeason',
             })}
@@ -79,7 +79,7 @@ export const EditListingSeasonFeeFormComponent = props => (
            <FieldTextInput
             className={css.input}
             id="porcentageHighSeason"
-            name="Porcentage High Season"
+            name="porcentageHighSeason"
             type="text"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.porcentageHighSeason',
@@ -90,7 +90,7 @@ export const EditListingSeasonFeeFormComponent = props => (
          <FieldDateInput
             className={css.input}
             id="startDateMediumSeason"
-            name="Start Date Medium Season"
+            name="startDateMediumSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.startDateMediumSeason',
             })}
@@ -100,7 +100,7 @@ export const EditListingSeasonFeeFormComponent = props => (
           <FieldDateInput
             className={css.input}
             id="endDateMediumSeason"
-            name="End Date Medium Season"
+            name="endDateMediumSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.endDateMediumSeason',
             })}
@@ -111,7 +111,7 @@ export const EditListingSeasonFeeFormComponent = props => (
            <FieldTextInput
             className={css.input}
             id="porcentageMediumSeason"
-            name="Porcentage Medium Season"
+            name="porcentageMediumSeason"
             type="text"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.porcentageMediumSeason',
@@ -119,12 +119,10 @@ export const EditListingSeasonFeeFormComponent = props => (
             placeholder={intl.formatMessage({ id: 'EditListingSeasonFeeForm.placeholderPorcentage' })}
           /> 
 
-
-
         <FieldDateInput
             className={css.input}
             id="startDateLowSeason"
-            name="Start Date Low Season"
+            name="startDateLowSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.startDateLowSeason',
             })}
@@ -136,7 +134,7 @@ export const EditListingSeasonFeeFormComponent = props => (
           <FieldDateInput
             className={css.input}
             id="endDateLowSeason"
-            name="End Date Low Season"
+            name="endDateLowSeason"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.endDateLowSeason',
             })}
@@ -147,7 +145,7 @@ export const EditListingSeasonFeeFormComponent = props => (
           <FieldTextInput
             className={css.input}
             id="porcentageLowSeason"
-            name="Porcentage Low Season"
+            name="porcentageLowSeason"
             type="text"
             label={intl.formatMessage({
               id: 'EditListingSeasonFeeForm.porcentageLowSeason',

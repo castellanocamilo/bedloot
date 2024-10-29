@@ -20,6 +20,8 @@ const getInitialValues = params => {
   const { listing } = params;
   const { price } = listing?.attributes || {};
 
+  ///console.log('price', price);
+
   return { price };
 };
 

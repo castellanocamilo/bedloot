@@ -329,8 +329,9 @@ const EditListingDetailsFormComponent = props => (
       const submitReady = (updated && pristine) || ready;
       const submitInProgress = updateInProgress;
       const hasMandatoryListingTypeData = listingType && transactionProcessAlias && unitType;
-      const submitDisabled =
-        invalid || disabled || submitInProgress || !hasMandatoryListingTypeData;
+      const submitDisabled = invalid || disabled || submitInProgress || !hasMandatoryListingTypeData;
+
+      console.log('values', values);
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>

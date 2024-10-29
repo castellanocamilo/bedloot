@@ -53,21 +53,7 @@
  *   - requiredMessage (optional):    Message for those fields, which are mandatory.
  */
 export const listingFields = [
-  // {
-  //   "scope": "public",
-  //   "label": "Gears",
-  //   "key": "gears",
-  //   "schemaType": "long",
-  //   "numberConfig": {
-  //     "minimum": 1,
-  //     "maximum": 24
-  //   },
-  //   "filterConfig": {
-  //     "indexForSearch": true,
-  //     "group": "primary",
-  //     "label": "Gears"
-  //   }
-  // }
+  
   {
     key: 'startDateHighSeason',
     scope: 'public',
@@ -75,7 +61,7 @@ export const listingFields = [
     saveConfig: {
       label: 'Start Date High Season',
       placeholderMessage: 'Choose a date for the start of the high season',
-      isRequired: false,
+      isRequired: true,
     },
     filterConfig: {
       indexForSearch: true,
@@ -85,6 +71,7 @@ export const listingFields = [
     },
     showConfig: {
       label: 'Start Date High Season',
+      isDetail: true,
     },
   },
   {
@@ -104,6 +91,7 @@ export const listingFields = [
     },
     showConfig: {
       label: 'End Date High Season',
+      isDetail: true,
     },
   },
   {
@@ -123,9 +111,10 @@ export const listingFields = [
     },
     showConfig: {
       label: 'Porcentage High Season',
+      isDetail: true,
     },
   },
-
+ /*
   {
     key: 'startDateMediumSeason',
     scope: 'public',
@@ -240,7 +229,7 @@ export const listingFields = [
       label: 'End Date Low Season',
     },
   },
-
+ */
   // {
   //   key: 'bikeType',
   //   scope: 'public',

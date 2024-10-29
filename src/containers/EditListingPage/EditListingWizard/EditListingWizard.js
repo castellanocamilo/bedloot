@@ -228,6 +228,12 @@ const tabCompleted = (tab, listing, config) => {
     publicData || {};
   const deliveryOptionPicked = publicData && (shippingEnabled || pickupEnabled);
 
+ // console.log('publicData', listing.attributes);
+
+  const { seasonFee } = publicData || {};
+
+ // console.log('seasonFee', seasonFee);
+
   switch (tab) {
     case DETAILS:
       return !!(
@@ -241,8 +247,9 @@ const tabCompleted = (tab, listing, config) => {
     case PRICING:
       return !!price;
     case SEASON_FEE:
-      return !!price;
-    case PRICING_AND_STOCK:
+      //return !!(startHighSeason  && endHighSeason  && porcentageHighSeason  && startMediumSeason  && endMediumSeason && porcentageMedium  && startLowSeason  && endLowSeason  && porcentageLowSeason);
+       return !!seasonFee;
+      case PRICING_AND_STOCK:
       return !!price; /// need to add season fee attributes
     case DELIVERY:
       return !!deliveryOptionPicked;

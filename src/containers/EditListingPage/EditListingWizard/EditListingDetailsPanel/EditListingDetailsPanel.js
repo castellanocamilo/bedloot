@@ -247,7 +247,7 @@ const getInitialValues = (
       listingFields
     ),
   };
-};
+}; 
 
 const EditListingDetailsPanel = props => {
   const {

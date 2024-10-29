@@ -141,7 +141,8 @@ const EditListingWizardTab = props => {
     const onUpdateListingOrCreateListingDraft = isNewURI
       ? (tab, values) => onCreateListingDraft(values, config)
       : (tab, values) => onUpdateListing(tab, values, config);
-
+    console.log('tab', tab);
+    console.log('updateValues', updateValues);
     const updateListingValues = isNewURI
       ? updateValues
       : { ...updateValues, id: currentListing.id };
@@ -214,6 +215,10 @@ const EditListingWizardTab = props => {
       return (
         <EditListingSeasonFeePanel
           {...panelProps(SEASON_FEE)}
+          // submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
+         onSubmit={values => {
+        onCompleteEditListingWizardTab(tab, values);
+      }}
         />
       );
     }

@@ -16,25 +16,28 @@ import EditListingSeasonFeeForm from './EditListingSeasonFeeForm';
 // as a template.
 import css from './EditListingSeasonFeePanel.module.css';
 
-const getInitialValues = props => {
+const  getInitialValues = props => {
   
-  const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
-    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = props.listing?.attributes?.publicData || {};
+  const { seasonFee } = props.listing?.attributes?.publicData || {};
+
+  // console.log('seasonFee', seasonFee);
+
+  const { startDateHighSeason, endDateHighSeason, startDateMediumSeason, endDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = seasonFee || {};
   
-    const seasonFee = {
+
+
+  return {
       startDateHighSeason: startDateHighSeason || null,
       endDateHighSeason: endDateHighSeason || null,
       startDateMediumSeason: startDateMediumSeason || null,
-      EndDateMediumSeason: EndDateMediumSeason || null,
+      endDateMediumSeason: endDateMediumSeason || null,
       startDateLowSeason: startDateLowSeason || null,
       endDateLowSeason: endDateLowSeason || null,
       porcentageHighSeason: porcentageHighSeason || null,
       porcentageMediumSeason: porcentageMediumSeason || null,
       porcentageLowSeason: porcentageLowSeason || null,
-    };
-
-  return {
-    seasonFee
+    
   };
 };
 
@@ -56,7 +59,7 @@ const EditListingSeasonFeePanel = props => {
   const isPublished =
     listing?.id && listing?.attributes.state !== LISTING_STATE_DRAFT;
   const initialValues = getInitialValues(props);
-
+    console.log('initialValues', initialValues);
   return (
     <div className={classes}>
       <h1 className={css.title}>
@@ -73,12 +76,26 @@ const EditListingSeasonFeePanel = props => {
         className={css.form}
         initialValues={initialValues}
         onSubmit={values => {
-          const { seasonFee } = values;
+         // const { seasonFee } = values;
+          
           const updateValues = {
-            publicData: {
-             seasonFee: { ...seasonFee }, 
-            },
+            publicData: { 
+              seasonFee: {
+                  startDateHighSeason: values.startDateHighSeason?.date?.toJSON() || null,
+                  endDateHighSeason: values.endDateHighSeason?.date?.toJSON(),
+                  startDateMediumSeason: values.startDateMediumSeason?.date?.toJSON() || null,
+                  endDateMediumSeason: values.endDateMediumSeason?.date?.toJSON() || null,
+                  startDateLowSeason: values.startDateLowSeason?.date?.toJSON() || null,
+                  endDateLowSeason: values.endDateLowSeason?.date?.toJSON(),
+                  porcentageHighSeason: values.porcentageHighSeason,
+                  porcentageMediumSeason: values.porcentageMediumSeason,
+                  porcentageLowSeason: values.porcentageLowSeason
+              }
+            }
           };
+          console.log('updateValues', updateValues);
+          
+          // onSubmit (updateValues);
           onSubmit(updateValues);
         }}
         saveActionMsg={submitButtonText}
