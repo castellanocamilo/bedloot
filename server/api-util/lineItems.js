@@ -147,7 +147,9 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 
 
   let { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
-    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData; 
+    porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData.seasonFee; 
+
+    console.log('publicData.seasonFee; ', publicData.seasonFee);
 
     startDateHighSeason = startDateHighSeason || dateSeasonByDefualt.startDateHighSeason;
     endDateHighSeason = endDateHighSeason ||  dateSeasonByDefualt.endDateHighSeason;
