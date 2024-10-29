@@ -151,11 +151,11 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
 
     console.log('publicData.seasonFee; ', publicData.seasonFee);
 
-    startDateHighSeason = startDateHighSeason || dateSeasonByDefualt.startDateHighSeason;
-    endDateHighSeason = endDateHighSeason ||  dateSeasonByDefualt.endDateHighSeason;
-    startDateMediumSeason = startDateMediumSeason || dateSeasonByDefualt.startDateMediumSeason;
-    EndDateMediumSeason = EndDateMediumSeason || dateSeasonByDefualt.EndDateMediumSeason;
-    startDateLowSeason = startDateLowSeason ||  dateSeasonByDefualt.startDateLowSeason;
+    startDateHighSeason = formatToMMDDYYYY(startDateHighSeason) || dateSeasonByDefualt.startDateHighSeason;
+    endDateHighSeason = formatToMMDDYYYY(endDateHighSeason) ||  dateSeasonByDefualt.endDateHighSeason;
+    startDateMediumSeason = formatToMMDDYYYY(startDateMediumSeason) || dateSeasonByDefualt.startDateMediumSeason;
+    EndDateMediumSeason = formatToMMDDYYYY(EndDateMediumSeason) || dateSeasonByDefualt.EndDateMediumSeason;
+    startDateLowSeason = formatToMMDDYYYY(startDateLowSeason) ||  dateSeasonByDefualt.startDateLowSeason;
     endDateLowSeason = endDateLowSeason  || dateSeasonByDefualt.endDateLowSeason;
     porcentageHighSeason = percentageSeasonsByDefault.porcentageHighSeason;
     porcentageMediumSeason = percentageSeasonsByDefault.porcentageMediumSeason;

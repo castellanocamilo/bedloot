@@ -282,6 +282,9 @@ exports.hasCommissionPercentage = commission => {
 
 
 exports.seasonFormat = ( startDateHigh, endDateHigh, percenteHigh, startDateMedium, endDateHighMedium, percenteMedium, startDateLower, endDateLower, percenteLower) => {
+  
+  
+  
   return [
     { seasonName: 'High', startDate: formatToCurrentYear(startDateHigh), endDate: formatToCurrentYear(endDateHigh), percentage: percenteHigh },
     { seasonName: 'Medium', startDate: formatToCurrentYear(startDateMedium), endDate: formatToCurrentYear(endDateHighMedium), percentage: percenteMedium },
