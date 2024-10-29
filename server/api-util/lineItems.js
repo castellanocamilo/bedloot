@@ -156,10 +156,10 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     startDateMediumSeason = formatToMMDDYYYY(startDateMediumSeason, true) || dateSeasonByDefualt.startDateMediumSeason;
     EndDateMediumSeason = formatToMMDDYYYY(EndDateMediumSeason, true) || dateSeasonByDefualt.EndDateMediumSeason;
     startDateLowSeason = formatToMMDDYYYY(startDateLowSeason, true) ||  dateSeasonByDefualt.startDateLowSeason;
-    endDateLowSeason = endDateLowSeason  || dateSeasonByDefualt.endDateLowSeason;
-    porcentageHighSeason = percentageSeasonsByDefault.porcentageHighSeason;
-    porcentageMediumSeason = percentageSeasonsByDefault.porcentageMediumSeason;
-    porcentageLowSeason =  percentageSeasonsByDefault.porcentageLowSeason
+    endDateLowSeason = formatToMMDDYYYY(endDateLowSeason, true)  || dateSeasonByDefualt.endDateLowSeason;
+    porcentageHighSeason = porcentageHighSeason || percentageSeasonsByDefault.porcentageHighSeason;
+    porcentageMediumSeason = porcentageMediumSeason || percentageSeasonsByDefault.porcentageMediumSeason;
+    porcentageLowSeason =  porcentageLowSeason || percentageSeasonsByDefault.porcentageLowSeason
 
 
   const seasons = seasonFormat(startDateHighSeason, endDateHighSeason, porcentageHighSeason, startDateMediumSeason, EndDateMediumSeason, porcentageMediumSeason, startDateLowSeason, endDateLowSeason,  porcentageLowSeason);
