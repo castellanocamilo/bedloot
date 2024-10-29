@@ -24,7 +24,7 @@ const dateSeasonByDefualt = {
   startDateHighSeason: '01/01',
   endDateHighSeason: '03/31',
   startDateMediumSeason: '04/01',
-  EndDateMediumSeason: '06/30',
+  endDateMediumSeason: '06/30',
   startDateLowSeason: '07/01',
   endDateLowSeason: '12/31',
 
@@ -146,7 +146,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
   const unitPrice = listing.attributes.price;
 
 
-  let { startDateHighSeason, endDateHighSeason, startDateMediumSeason, EndDateMediumSeason, startDateLowSeason, endDateLowSeason, 
+  let { startDateHighSeason, endDateHighSeason, startDateMediumSeason, endDateMediumSeason, startDateLowSeason, endDateLowSeason, 
     porcentageHighSeason, porcentageMediumSeason, porcentageLowSeason } = publicData.seasonFee; 
 
     console.log('publicData.seasonFee; ', publicData.seasonFee);
@@ -154,7 +154,7 @@ exports.transactionLineItems = (listing, orderData, providerCommission, customer
     startDateHighSeason = formatToMMDDYYYY(startDateHighSeason, true) || dateSeasonByDefualt.startDateHighSeason;
     endDateHighSeason = formatToMMDDYYYY(endDateHighSeason, true) ||  dateSeasonByDefualt.endDateHighSeason;
     startDateMediumSeason = formatToMMDDYYYY(startDateMediumSeason, true) || dateSeasonByDefualt.startDateMediumSeason;
-    EndDateMediumSeason = formatToMMDDYYYY(EndDateMediumSeason, true) || dateSeasonByDefualt.EndDateMediumSeason;
+    EndDateMediumSeason = formatToMMDDYYYY(endDateMediumSeason, true) || dateSeasonByDefualt.endDateMediumSeason;
     startDateLowSeason = formatToMMDDYYYY(startDateLowSeason, true) ||  dateSeasonByDefualt.startDateLowSeason;
     endDateLowSeason = formatToMMDDYYYY(endDateLowSeason, true)  || dateSeasonByDefualt.endDateLowSeason;
     porcentageHighSeason = porcentageHighSeason || percentageSeasonsByDefault.porcentageHighSeason;
